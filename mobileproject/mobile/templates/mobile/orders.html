@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%extends 'mobile/base.html'%}
+
+{%block body_block%}
+{%load static%}
+<link href="{%static 'css/order.css' %}" rel="stylesheet">
+<h1>order here!!</h1>
+<div class="row">
+    <div  id="table" class="col-10">
+        <form action="" method="post" >
+            {%csrf_token%}
+
+        <div class="group-input>">
+
+        </div>
+              {{form.as_p}}
+
+
+            <button><a href="{%url 'cart'%}" ><input type="submit" class="btn btn-primary"></a> </button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

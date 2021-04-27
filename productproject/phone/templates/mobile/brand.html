@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{%extends 'mobile/base.html'%}
+
+{%block body_block%}
+{%load static%}
+<link href="" rel="stylesheet">
+<div class="row">
+    <div class="col-12">
+        <form action="" method="post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <input type="submit">
+        </form>
+
+    </div>
+ <div class="col-6">
+
+     <table  class="table caption-top">
+         <tr>
+             <td><h5>brand_name</h5></td>
+         </tr>
+         {%for brand in brands%}
+         <tr>
+
+             <td class="form-select">{{brand.brand_name}}</td>
+            <td><a href="{%url 'edit' brand.id %}">edit</a></td>
+             <td><a href="{%url 'delete' brand.id %}">delete</a> </td>
+
+         </tr>
+         {% endfor %}
+     </table>
+ </div>
+</div>
+{% endblock %}
